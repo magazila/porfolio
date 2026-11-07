@@ -1,0 +1,67 @@
+.card__grid {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.card__grid.news{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card__grid.catalog{
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+}
+
+.card {
+  flex-shrink: 0;
+}
+
+.card__img {
+  position: relative;
+  img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+}
+
+.card__news{
+    img{
+       width: 100%;
+       aspect-ratio: 16/10;
+       object-fit: cover;
+       object-position: center;
+    }
+}
+
+.card__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 36px;
+}
+
+.anime__rati {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 1rem;
+  color: rgba(236, 240, 241, 1);
+  font-weight: bold;
+}
+.age__rati {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 1rem;
+  color: rgba(236, 240, 241, 1);
+  font-weight: bold;
+}
+
+.name, .marker {
+    display: none;
+}
