@@ -1,0 +1,234 @@
+.task-list {
+  list-style: none;
+  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(4 , 1fr);
+}
+
+.task {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s,
+    background-color 0.25s ease,
+    color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.task:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.task::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--border-strong);
+}
+
+.task--high::before {
+  background: var(--danger);
+}
+
+.task--medium::before {
+  background: var(--warning);
+}
+
+.task--low::before {
+  background: var(--success);
+}
+
+.task__check {
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.task__check input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.task__checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--border-strong);
+  border-radius: 7px;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+}
+
+.task__checkmark::after {
+  content: "";
+  width: 5px;
+  height: 10px;
+  border: solid rgb(255, 255, 255);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  margin-bottom: 2px;
+  transition: transform 0.15s ease;
+}
+
+.task__check:hover .task__checkmark {
+  border-color: var(--primary);
+}
+
+.task__check input:checked + .task__checkmark {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.task__check input:checked + .task__checkmark::after {
+  transform: rotate(45deg) scale(1);
+}
+
+.task__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.task__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.task__title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 40px;
+}
+
+.task__desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.task__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.task__priority {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+.task__priority--high {
+  color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.task__priority--medium {
+  color: var(--warning);
+  background: var(--warning-soft);
+}
+
+.task__priority--low {
+  color: var(--success);
+  background: var(--success-soft);
+}
+
+.task__tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-xs);
+  background: var(--surface-alt);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.task__tag--work {
+  color: var(--primary);
+  background: var(--primary-soft);
+  border-color: transparent;
+}
+
+.task__tag--personal {
+  color: var(--info);
+  background: var(--info-soft);
+  border-color: transparent;
+}
+
+.task__tag--study {
+  color: var(--warning);
+  background: var(--warning-soft);
+  border-color: transparent;
+}
+
+.task__tag--health {
+  color: var(--success);
+  background: var(--success-soft);
+  border-color: transparent;
+}
+
+.task__date {
+  font-size: 12.5px;
+  color: var(--text-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.task__actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.task:hover .task__actions {
+  opacity: 1;
+}
+
+.task--done {
+  opacity: 0.6;
+}
+
+.task--done .task__title {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.task--done::before {
+  background: var(--success);
+}
