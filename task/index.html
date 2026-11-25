@@ -1,246 +1,86 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TaskFlow — Все задачи</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <div class="app">
-      <aside class="sidebar">
-        <a href="#" class="logo">
-          <span class="logo__mark">TF</span>
-          <span class="logo__text">TaskFlow</span>
-        </a>
 
-        <!-- <nav class="nav">
-          <p class="nav__label">Представления</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow — Все задачи</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-          <a href="#" class="nav__item nav__item--active">
-            <svg
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M22 12h-6l-2 3h-4l-2-3H2" />
-              <path
-                d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
-              />
-            </svg>
-            <span>Все задачи</span>
-            <span class="nav__count">12</span>
-          </a>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a href="#" class="logo">
+        <span class="logo__mark">TF</span>
+        <span class="logo__text">TaskFlow</span>
+      </a>
 
-          <a href="#" class="nav__item">
-            <svg
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <rect x="3" y="4" width="18" height="18" rx="2" />
-              <line x1="16" y1="2" x2="16" y2="6" />
-              <line x1="8" y1="2" x2="8" y2="6" />
-              <line x1="3" y1="10" x2="21" y2="10" />
-            </svg>
-            <span>Сегодня</span>
-            <span class="nav__count">3</span>
-          </a>
-
-          <a href="#" class="nav__item">
-            <svg
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <rect x="3" y="4" width="18" height="18" rx="2" />
-              <line x1="16" y1="2" x2="16" y2="6" />
-              <line x1="8" y1="2" x2="8" y2="6" />
-              <line x1="3" y1="10" x2="21" y2="10" />
-              <polyline points="9 15 11 17 15 13" />
-            </svg>
-            <span>Предстоящие</span>
-            <span class="nav__count">5</span>
-          </a>
-
-          <a href="#" class="nav__item">
-            <svg
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-              <polyline points="22 4 12 14.01 9 11.01" />
-            </svg>
-            <span>Завершённые</span>
-            <span class="nav__count">24</span>
-          </a>
-        </nav> -->
-<!-- 
+      
         <div class="nav nav--lists">
-          <p class="nav__label">Мои списки</p>
+          <p class="nav__label">Участники</p>
 
           <a href="#" class="nav__item">
             <span class="dot dot--work"></span><span>Работа</span>
             <span class="nav__count">6</span>
           </a>
-          <a href="#" class="nav__item">
-            <span class="dot dot--personal"></span><span>Личное</span>
-            <span class="nav__count">3</span>
-          </a>
-          <a href="#" class="nav__item">
-            <span class="dot dot--study"></span><span>Учёба</span>
-            <span class="nav__count">2</span>
-          </a>
-          <a href="#" class="nav__item">
-            <span class="dot dot--health"></span><span>Здоровье</span>
-            <span class="nav__count">1</span>
-          </a>
 
-          <button class="btn btn--ghost btn--sm nav__add">
-            <svg
-              viewBox="0 0 24 24"
-              width="16"
-              height="16"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <line x1="12" y1="5" x2="12" y2="19" />
-              <line x1="5" y1="12" x2="19" y2="12" />
-            </svg>
-            Новый список
-          </button>
-        </div> -->
 
-        <div class="sidebar__user">
-          <div class="avatar">АК</div>
-          <div class="user__info">
-            <p class="user__name">Анна Ким</p>
-            <p class="user__email">anna@taskflow.io</p>
-          </div>
-          <button class="icon-btn" title="Настройки">
-            <svg
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="3" />
-              <path
-                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.14.61.68 1.05 1.31 1.05H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"
-              />
-            </svg>
-          </button>
+
         </div>
-      </aside>
 
-      <main class="main">
-        <header class="topbar">
-          <div class="search">
-            <svg
-              class="search__icon"
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+      <div class="sidebar__user">
+        <div class="avatar">АК</div>
+        <div class="user__info">
+          <p class="user__name">Анна Ким</p>
+          <p class="user__email">anna@taskflow.io</p>
+        </div>
+        <button class="icon-btn" title="Настройки">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.14.61.68 1.05 1.31 1.05H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+          </svg>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="search">
+          <svg class="search__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <input type="text" class="search__input" placeholder="Поиск задач..." />
+        </div>
+
+        <div class="topbar__actions">
+          <button class="icon-btn" id="themeToggle" title="Сменить тему" aria-label="Сменить тему">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
             </svg>
-            <input
-              type="text"
-              class="search__input"
-              placeholder="Поиск задач..."
-            />
-          </div>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
 
-          <div class="topbar__actions">
-            <button
-              class="icon-btn"
-              id="themeToggle"
-              title="Сменить тему"
-              aria-label="Сменить тему"
-            >
-              <svg
-                class="icon-sun"
-                viewBox="0 0 24 24"
-                width="18"
-                height="18"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="4" />
-                <path
-                  d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-                />
-              </svg>
-              <svg
-                class="icon-moon"
-                viewBox="0 0 24 24"
-                width="18"
-                height="18"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-              </svg>
-            </button>
+          <button class="icon-btn icon-btn--badge" title="Уведомления">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+            </svg>
+            <span class="badge-dot"></span>
+          </button>
 
-            <button class="icon-btn icon-btn--badge" title="Уведомления">
-              <svg
-                viewBox="0 0 24 24"
-                width="18"
-                height="18"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-              </svg>
-              <span class="badge-dot"></span>
-            </button>
-
-            <!-- <button class="btn btn--primary">
+          <!-- <button class="btn btn--primary">
               <svg
                 viewBox="0 0 24 24"
                 width="16"
@@ -256,73 +96,64 @@
               </svg>
               <span>Новая задача</span>
             </button> -->
-          </div>
-        </header>
+        </div>
+      </header>
 
-        <section class="content">
-          <div class="page-header">
-            <div class="page-header__top">
-              <div>
-                <h1 class="page-header__title">Все задачи</h1>
-                <!-- <p class="page-header__subtitle">
+      <section class="content">
+        <div class="page-header">
+          <div class="page-header__top">
+            <div>
+              <h1 class="page-header__title">Все задачи</h1>
+              <!-- <p class="page-header__subtitle">
                   Среда, 12 июня · 12 задач · 3 выполнено
                 </p> -->
-              </div>
-              <!-- <span class="stat-pill">Выполнено 25%</span> -->
             </div>
-            <div class="progress">
-              <div class="progress__bar" style="width: 1%"></div>
-            </div>
+            <!-- <span class="stat-pill">Выполнено 25%</span> -->
           </div>
-
-          <div class="toolbar">
-<div class="tabs">
-
-</div>
-            <button class="btn btn--ghost btn--sm">
-              <svg
-                viewBox="0 0 24 24"
-                width="14"
-                height="14"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M3 6h18M6 12h12M10 18h4" />
-              </svg>
-              По дате
-            </button>
+          <div class="progress">
+            <div class="progress__bar" style="width: 1%"></div>
           </div>
+        </div>
 
-          <ul class="task-list"></ul>
-        </section>
-      </main>
-    </div>
+        <div class="toolbar">
+          <div class="tabs"></div>
+          <button class="btn btn--ghost btn--sm">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 6h18M6 12h12M10 18h4" />
+            </svg>
+            По дате
+          </button>
+        </div>
 
-    <script>
-      (function () {
-        const root = document.documentElement;
-        const toggle = document.getElementById("themeToggle");
+        <ul class="task-list"></ul>
+      </section>
+    </main>
+  </div>
 
-        // Восстанавливаем сохранённую тему при загрузке
-        const saved = localStorage.getItem("theme");
-        if (saved === "dark") root.setAttribute("data-theme", "dark");
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const toggle = document.getElementById("themeToggle");
 
-        toggle.addEventListener("click", () => {
-          const isDark = root.getAttribute("data-theme") === "dark";
-          if (isDark) {
-            root.removeAttribute("data-theme");
-            localStorage.setItem("theme", "light");
-          } else {
-            root.setAttribute("data-theme", "dark");
-            localStorage.setItem("theme", "dark");
-          }
-        });
-      })();
-    </script>
+      // Восстанавливаем сохранённую тему при загрузке
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") root.setAttribute("data-theme", "dark");
 
-    <script type="module" src="js/app.js"></script>
-  </body>
+      toggle.addEventListener("click", () => {
+        const isDark = root.getAttribute("data-theme") === "dark";
+        if (isDark) {
+          root.removeAttribute("data-theme");
+          localStorage.setItem("theme", "light");
+        } else {
+          root.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+        }
+      });
+    })();
+  </script>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+
 </html>

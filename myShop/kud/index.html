@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      header {
+        position: fixed;
+        z-index: 999;
+        background: #fff;
+        top: 0;
+        width: 100%;
+      }
+      header ul {
+        display: flex;
+        width: 100%;
+        border-radius: 0 0 1rem 1rem;
+        box-shadow: 0 0 10px 2px #00000030;
+        li {
+          padding: 1rem;
+          cursor: pointer;
+        }
+      }
+      .addProducte {
+        margin-top: 80px;
+        scroll-behavior: 100px;
+      }
+      .edit__list {
+        scroll-behavior: 100px;
+      }
+      .minProducte {
+        padding: 1rem;
+        box-shadow: 0 0 10px 1px #00000030;
+        border-radius: 0.5rem;
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr 0.1fr 0.1fr;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .minProducte input {
+        padding: 0.5rem;
+        border-radius: 10rem;
+        border: 0;
+        background: rgba(170, 166, 157, 0.4);
+      }
+      .minProducte_img {
+        img {
+          aspect-ratio: 4/5;
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+      .producteAll {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <ul>
+          <li class="admin__link admin__link--active">
+            <a href="#addProducte">Добавить товар</a>
+          </li>
+          <li class="admin__link"><a href="#edit__list">Редактироdать</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="addProducte" id="addProducte">
+      <h2 class="section__title">Добавить товар</h2>
+      <div class="container container__admin">
+        <aside class="side-bar"></aside>
+        <form action="" id="FormAddProducte">
+          <input
+            type="text"
+            name="card__title"
+            placeholder="Введите название товара"
+            required
+          />
+          <input
+            type="text"
+            name="mindesk"
+            id=""
+            placeholder="Краткое описание"
+            required
+          />
+          <textarea
+            name="fullDesk"
+            id="fullDesk"
+            placeholder="Полное опсиание товара"
+            required
+          ></textarea>
+          <div class="form__Other">
+            <input
+              type="number"
+              name="count"
+              placeholder="колличество на складе"
+              required
+            />
+            <input
+              type="number"
+              name="discount"
+              id=""
+              placeholder="Размер скидки"
+              required
+            />
+            <input
+              type="number"
+              name="width"
+              id=""
+              placeholder="Ширина"
+              required
+            />
+            <input
+              type="number"
+              name="heigth"
+              id=""
+              placeholder="Высота"
+              required
+            />
+            <select name="category" id="" required>
+              <option value="" selected disabled>Выбери категорию</option>
+              <option value="Вязание">Вязание</option>
+              <option value="Вышивка">Вышивка</option>
+              <option value="Бисер">Бесер</option>
+              <option value="Ловцы снов">Ловцы снов</option>
+              <option value="Прочее">Прочее</option>
+            </select>
+            <input
+              type="number"
+              name="price"
+              id=""
+              placeholder="цена"
+              required
+            />
+          </div>
+          <input
+            type="url"
+            name="img"
+            id=""
+            placeholder="укажимте ссылку на картинку"
+            required
+          />
+
+          <button class="sentNewProducte">Добавить</button>
+        </form>
+      </div>
+    </section>
+    <section class="edit__list" id="edit__list">
+      <h2 class="section__title">Редактировать товары</h2>
+      <div class="container">
+        <ul>
+          <li class="minProducte" style="margin: 1rem 0;">
+            <figure class="minProducte_img"></figure>
+            <p>Название</p>
+            <p>Цена</p>
+            <p>Скидка</p>
+            <p>Колличество</p>
+            <p>Доступность</p>
+            <div class="edit"></div>
+            <div class="delete"></div>
+          </li>
+        </ul>
+        <ul class="producteAll" ></ul>
+      </div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/71c864647a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="../js/admin.js"></script>
+  </body>
+</html>

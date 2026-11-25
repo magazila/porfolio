@@ -1,29 +1,59 @@
-@import url('block/var.css');
-@import url('block/reset.css');
-@import url('block/carcase.css');
-@import url('block/topbar.css');
-@import url('block/icon_btn.css');
-@import url('block/content.css');
-@import url('block/task-list.css');
-
-
-
-
+@import url("block/var.css");
+@import url("block/reset.css");
+@import url("block/carcase.css");
+@import url("block/topbar.css");
+@import url("block/icon_btn.css");
+@import url("block/content.css");
+@import url("block/task-list.css");
 
 /* ============================================================
    8. АДАПТИВ
 ============================================================ */
 @media (max-width: 900px) {
-  .sidebar { display: none; }
-  .content { padding: 24px 20px 48px; }
-  .topbar { padding: 14px 20px; }
+  .sidebar {
+    display: none;
+  }
+  .content {
+    padding: 24px 20px 48px;
+  }
+  .topbar {
+    padding: 14px 20px;
+  }
 }
 
 @media (max-width: 600px) {
-  .page-header__top { flex-direction: column; }
-  .task { padding: 14px; }
-  .task__desc { display: none; }
-  .topbar .btn--primary span { display: none; }
-  .topbar .btn--primary { padding: 9px 12px; }
-  .search { max-width: none; }
+  .page-header__top {
+    flex-direction: column;
+  }
+  .task {
+    padding: 14px;
+  }
+  .task__desc {
+    display: none;
+  }
+  .topbar .btn--primary span {
+    display: none;
+  }
+  .topbar .btn--primary {
+    padding: 9px 12px;
+  }
+  .search {
+    max-width: none;
+  }
+  .task-list {
+    grid-template-columns: 1fr;
+  }
+  .toolbar {
+    position: sticky;
+    top: 70px;
+    z-index: 999;
+    
+  }
+  .tabs {
+    position: sticky;
+    top: 70px;background: #fff;
+  }
+  .btn--sm {
+    display: none;
+  }
 }
