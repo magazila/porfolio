@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <title>Админка</title>
   </head>
   <body>
     <header class="header">
@@ -14,109 +14,125 @@
           <li class="admin__link admin__link--active">
             <a href="#addProducte">Добавить товар</a>
           </li>
-          <li class="admin__link"><a href="#edit__list">Редактироdать</a></li>
+          <li class="admin__link"><a href="#edit__list">Редактировать</a></li>
+          <li class="admin__link" style="margin-left: auto;" id="logout">Выйти</li>
         </ul>
       </div>
     </header>
 
-    <section class="addProducte" id="addProducte">
-      <h2 class="section__title">Добавить товар</h2>
-      <div class="container container__admin">
-        <aside class="side-bar"></aside>
-        <form action="" id="FormAddProducte">
-          <input
-            type="text"
-            name="card__title"
-            placeholder="Введите название товара"
-            required
-          />
-          <input
-            type="text"
-            name="mindesk"
-            id=""
-            placeholder="Краткое описание"
-            required
-          />
-          <textarea
-            name="fullDesk"
-            id="fullDesk"
-            placeholder="Полное опсиание товара"
-            required
-          ></textarea>
-          <div class="form__Other">
-            <input
-              type="number"
-              name="count"
-              placeholder="колличество на складе"
-              required
-            />
-            <input
-              type="number"
-              name="discount"
-              id=""
-              placeholder="Размер скидки"
-              required
-            />
-            <input
-              type="number"
-              name="width"
-              id=""
-              placeholder="Ширина"
-              required
-            />
-            <input
-              type="number"
-              name="heigth"
-              id=""
-              placeholder="Высота"
-              required
-            />
-            <select name="category" id="" required>
-              <option value="" selected disabled>Выбери категорию</option>
-              <option value="Вязание">Вязание</option>
-              <option value="Вышивка">Вышивка</option>
-              <option value="Бисер">Бесер</option>
-              <option value="Ловцы снов">Ловцы снов</option>
-              <option value="Прочее">Прочее</option>
-            </select>
-            <input
-              type="number"
-              name="price"
-              id=""
-              placeholder="цена"
-              required
-            />
-          </div>
-          <input
-            type="url"
-            name="img"
-            id=""
-            placeholder="укажимте ссылку на картинку"
-            required
-          />
-
-          <button class="sentNewProducte">Добавить</button>
+    <!-- Вход. Виден, пока нет токена -->
+    <section class="addProducte" id="login-block">
+      <h2 class="section__title">Вход</h2>
+      <div class="container">
+        <form id="login">
+          <input type="email" name="email" placeholder="Почта" required />
+          <input type="password" name="password" placeholder="Пароль" required />
+          <button class="sentNewProducte">Войти</button>
         </form>
       </div>
     </section>
-    <section class="edit__list" id="edit__list">
-      <h2 class="section__title">Редактировать товары</h2>
-      <div class="container">
-        <ul>
-          <li class="minProducte" style="margin: 1rem 0;">
-            <figure class="minProducte_img"></figure>
-            <p>Название</p>
-            <p>Цена</p>
-            <p>Скидка</p>
-            <p>Колличество</p>
-            <p>Доступность</p>
-            <div class="edit"></div>
-            <div class="delete"></div>
-          </li>
-        </ul>
-        <ul class="producteAll" ></ul>
-      </div>
-    </section>
+
+    <!-- Всё остальное. Видно только после входа -->
+    <div id="adminPanel" hidden>
+      <section class="addProducte" id="addProducte">
+        <h2 class="section__title">Добавить товар</h2>
+        <div class="container container__admin">
+          <aside class="side-bar"></aside>
+          <form action="" id="FormAddProducte">
+            <input
+              type="text"
+              name="card__title"
+              placeholder="Введите название товара"
+              required
+            />
+            <input
+              type="text"
+              name="mindesk"
+              placeholder="Краткое описание"
+              required
+            />
+            <textarea
+              name="fullDesk"
+              id="fullDesk"
+              placeholder="Полное описание товара"
+              required
+            ></textarea>
+            <div class="form__Other">
+              <input
+                type="number"
+                name="count"
+                placeholder="Количество на складе"
+                min="0"
+                required
+              />
+              <input
+                type="number"
+                name="discount"
+                placeholder="Размер скидки, %"
+                min="0"
+                max="100"
+                required
+              />
+              <input
+                type="number"
+                name="width"
+                placeholder="Ширина"
+                min="0"
+                required
+              />
+              <input
+                type="number"
+                name="heigth"
+                placeholder="Высота"
+                min="0"
+                required
+              />
+              <select name="category" required>
+                <option value="" selected disabled>Выбери категорию</option>
+                <option value="Вязание">Вязание</option>
+                <option value="Вышивка">Вышивка</option>
+                <option value="Бисер">Бисер</option>
+                <option value="Ловцы снов">Ловцы снов</option>
+                <option value="Прочее">Прочее</option>
+              </select>
+              <input
+                type="number"
+                name="price"
+                placeholder="Цена"
+                min="0"
+                required
+              />
+            </div>
+            <textarea
+              name="img"
+              placeholder="Ссылки на картинки, каждая с новой строки"
+              required
+            ></textarea>
+
+            <button class="sentNewProducte">Добавить</button>
+          </form>
+        </div>
+      </section>
+      <section class="edit__list" id="edit__list">
+        <h2 class="section__title">Редактировать товары</h2>
+        <div class="container">
+          <ul>
+            <li class="minProducte" style="margin: 1rem 0;">
+              <figure class="minProducte_img"></figure>
+              <p>Название</p>
+              <p>Цена</p>
+              <p>Скидка</p>
+              <p>Количество</p>
+              <p>Доступность</p>
+              <div class="edit"></div>
+              <div class="delete"></div>
+            </li>
+          </ul>
+          <ul class="producteAll"></ul>
+        </div>
+      </section>
+    </div>
+
     <script
       src="https://kit.fontawesome.com/71c864647a.js"
       crossorigin="anonymous"

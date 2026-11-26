@@ -1,38 +1,34 @@
 const cardGrid = document.querySelector(".card__grid");
 
 export const createCard = ({
-  Category,
-  count,
+  category,
   discount,
-  fullDesk,
-  heigth,
+  height,
   id,
-  img,
-  inStoke,
-  minDesk,
-  minName,
+  images: imgList,
+  in_stock,
+  short_desc,
+  name,
   price,
   width,
 }) => {
-  const categoryValue = Category !== "none" ? Category : "Прочее";
-  const stokeValue = inStoke ? "Доступен для заказ" : "Недоступен дял заказа";
+  const stokeValue = in_stock ? "Доступен для заказа" : "Недоступен для заказа";
   const discountValue = discount === 0 ? "none" : "";
-  const priceValue = price - (price * discount / 100)
-  const colorPrice = discount > 0 ? 'rgba(179, 57, 57,1.0)' : ''
-
+  const priceValue = Math.round(price - (price * discount) / 100);
+  const colorPrice = discount > 0 ? "rgba(179, 57, 57,1.0)" : "";
 
   // создаем всю карточку товара
   const card = document.createElement("article");
   card.className = "card";
   card.dataset.id = id;
 
-  // Создаем картинку внутри картчоки
+  // Создаем картинку внутри картчоки (берем первую из массива)
   const imgCont = document.createElement("figure");
   imgCont.className = "card__img";
-  const images = document.createElement("img");
-  images.src = img;
-  images.alt = minName;
-  imgCont.append(images);
+  const photo = document.createElement("img");
+  if (imgList[0]) photo.src = imgList[0];
+  photo.alt = name;
+  imgCont.append(photo);
 
   // создаем бирки
   const sale = document.createElement("span");
@@ -41,13 +37,13 @@ export const createCard = ({
   sale.textContent = ` - ${discount} %`;
   const cat = document.createElement("span");
   cat.className = "card__category";
-  cat.textContent = categoryValue;
+  cat.textContent = category;
   const stoke = document.createElement("span");
   stoke.className = "card__inStoke";
   stoke.textContent = stokeValue;
   const param = document.createElement("span");
   param.className = "card__param";
-  param.textContent = `${width} x ${heigth}`;
+  param.textContent = `${width} x ${height}`;
   imgCont.append(sale, cat, stoke, param);
 
   //создаем тело картчоки
@@ -55,22 +51,21 @@ export const createCard = ({
   cardBody.className = "card__body";
   const cardName = document.createElement("h3");
   cardName.className = "card__name";
-  cardName.textContent = minName;
+  cardName.textContent = name;
   const cardMinDesk = document.createElement("p");
   cardMinDesk.className = "card_minDesk";
-  cardMinDesk.textContent = minDesk;
-
+  cardMinDesk.textContent = short_desc;
 
   const priceConteiner = document.createElement("span");
   priceConteiner.className = "card_price";
-  priceConteiner.style.color = colorPrice
+  priceConteiner.style.color = colorPrice;
   priceConteiner.textContent = `${priceValue} ₽`;
 
   const showMore = document.createElement("button");
-  showMore.disabled = !inStoke;
+  showMore.disabled = !in_stock;
   showMore.className = "card__showMore";
   showMore.textContent = "Подробнее";
-  cardBody.append(cardName, cardMinDesk,priceConteiner, showMore);
+  cardBody.append(cardName, cardMinDesk, priceConteiner, showMore);
 
   card.append(imgCont, cardBody);
 
