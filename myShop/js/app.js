@@ -20,7 +20,7 @@ const initApp = async () => {
 };
 
 const categoryConteiner = document.querySelector(".card__all-category");
-
+const cardGrid = document.querySelector(".card__grid");
 
 
 
@@ -54,6 +54,7 @@ const showUnicCategory = () => {
   }
 };
 const renderCard = (category = "") => {
+  cardGrid.innerHTML=''
   const filterProducts = category
     ? products.filter((value) => value.Category === category)
     : products;
